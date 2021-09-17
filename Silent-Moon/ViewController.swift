@@ -39,12 +39,12 @@ class ViewController: UIViewController {
     private lazy var titleStackView: UIStackView = {
         let title = UILabel()
         title.text = "We are what we do"
-        title.font = .systemFont(ofSize: 30, weight: .bold)
+        title.font = .systemFont(ofSize: LayoutMetrics.titleFontSize, weight: .bold)
         title.textColor = UIColor(named: "black")
 
         let subtitle = UILabel()
         subtitle.text = "Thousands of people are using silent moon for small meditations"
-        subtitle.font = .systemFont(ofSize: 16, weight: .light)
+        subtitle.font = .systemFont(ofSize: LayoutMetrics.subtitleFontSize, weight: .light)
         subtitle.textColor = UIColor(named: "gray")
         subtitle.numberOfLines = 0
         subtitle.textAlignment = .center
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.alignment = .center
-        stack.spacing = 30
+        stack.spacing = LayoutMetrics.titleStackViewSpacing
 
         return stack
     }()
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
 
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setTitle("ALREADY HAVE AN ACCOUNT? LOG IN", for: .normal)
-        btn.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
+        btn.titleLabel?.font = .systemFont(ofSize: LayoutMetrics.loginButtonFontSize, weight: .medium)
         btn.setTitleColor(UIColor(named: "blue"), for: .normal)
         btn.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
 
@@ -112,7 +112,7 @@ class ViewController: UIViewController {
             logoIV.topAnchor.constraint(equalTo: view.topAnchor, constant: LayoutMetrics.logoTopOffset),
 
             titleStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleStackView.topAnchor.constraint(equalTo: backgroundIV.bottomAnchor, constant: 15),
+            titleStackView.topAnchor.constraint(equalTo: backgroundIV.bottomAnchor, constant: LayoutMetrics.titleStackTopOffset),
             titleStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: LayoutMetrics.titleHorizontalPadding),
             titleStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -LayoutMetrics.titleHorizontalPadding),
 
@@ -124,7 +124,7 @@ class ViewController: UIViewController {
             signUpButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: LayoutMetrics.signUpButtonBottomOffset),
 
             loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loginButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 20),
+            loginButton.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: LayoutMetrics.loginButtonTopOffset),
         ]
 
         // Ativa as constraints e posiciona na tela
@@ -133,7 +133,7 @@ class ViewController: UIViewController {
 
     @objc private func signUpButtonTapped() {
         // FIXME: não é modal, precisamos usar navigation controller
-        present(SignFormViewController(), animated: true, completion: nil)
+        present(SignFormViewController(type: .signin), animated: true, completion: nil)
         print("usuario fez signup")
     }
 
@@ -145,11 +145,17 @@ class ViewController: UIViewController {
 
     // Ajuda a dar nome e significado para as constantes numéricas, além de facilitar a reutilização e manutenção delas
     private enum LayoutMetrics {
+        static let titleFontSize: CGFloat = 30
+        static let subtitleFontSize: CGFloat = 16
+        static let loginButtonFontSize: CGFloat = 14
+        static let titleStackViewSpacing: CGFloat = 30
+        static let titleStackTopOffset: CGFloat = 15
         static let distanceBetweenButtons: CGFloat = 40
         static let ilustraOffset: CGFloat = 400
         static let logoTopOffset: CGFloat = 80
         static let signUpButtonBottomOffset: CGFloat = -128
         static let titleHorizontalPadding: CGFloat = 58
+        static let loginButtonTopOffset: CGFloat = 20
     }
 }
 
