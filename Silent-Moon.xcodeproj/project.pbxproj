@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C9D599D26FE0E7900907E82 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9D599C26FE0E7900907E82 /* MyTextField.swift */; };
 		4CA1C45A26F4D8590053AB4A /* SignFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA1C45926F4D8590053AB4A /* SignFormViewController.swift */; };
 		4CF060C526EB91A70098AB29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF060C426EB91A70098AB29 /* AppDelegate.swift */; };
 		4CF060C726EB91A70098AB29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF060C626EB91A70098AB29 /* SceneDelegate.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C9D599C26FE0E7900907E82 /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		4CA1C45926F4D8590053AB4A /* SignFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignFormViewController.swift; sourceTree = "<group>"; };
 		4CF060C126EB91A70098AB29 /* Silent-Moon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Silent-Moon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF060C426EB91A70098AB29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				4CF060CD26EB91A80098AB29 /* Assets.xcassets */,
 				4CF060D226EB91A80098AB29 /* Info.plist */,
 				4CA1C45926F4D8590053AB4A /* SignFormViewController.swift */,
+				4C9D599C26FE0E7900907E82 /* MyTextField.swift */,
 			);
 			path = "Silent-Moon";
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 				4CF060C926EB91A70098AB29 /* ViewController.swift in Sources */,
 				4CF060C526EB91A70098AB29 /* AppDelegate.swift in Sources */,
 				4CF060C726EB91A70098AB29 /* SceneDelegate.swift in Sources */,
+				4C9D599D26FE0E7900907E82 /* MyTextField.swift in Sources */,
 				4CA1C45A26F4D8590053AB4A /* SignFormViewController.swift in Sources */,
 				4CF060D926EB9CE80098AB29 /* RoundedButton.swift in Sources */,
 			);

@@ -55,6 +55,18 @@ class RoundedButton: UIButton {
         return blueButton
     }
 
+    static func createWhiteButton(title: String) -> RoundedButton {
+        let whiteButton = RoundedButton()
+
+        whiteButton.titleText = title
+        whiteButton.backgroundColorName = "white"
+        whiteButton.titleColorName = "black"
+        whiteButton.layer.borderWidth = 1
+        whiteButton.layer.borderColor = UIColor(named: "strokeColor")?.cgColor
+
+        return whiteButton
+    }
+
     // MARK: - Layout Metrics
 
     enum LayoutMetrics {

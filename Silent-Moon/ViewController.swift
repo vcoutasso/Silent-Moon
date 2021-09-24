@@ -132,9 +132,15 @@ class ViewController: UIViewController {
     }
 
     @objc private func signUpButtonTapped() {
-        // FIXME: não é modal, precisamos usar navigation controller
-        present(SignFormViewController(type: .signin), animated: true, completion: nil)
-        print("usuario fez signup")
+        let signFormVC = SignFormViewController(type: .signin)
+        // Apresenta modal
+        // present(signFormVC, animated: true, completion: nil)
+
+        // Apresenta view controller
+        navigationController?.pushViewController(signFormVC, animated: true)
+
+        // Qual a diferença pra pushViewController?
+        // show(signFormVC, sender: self)
     }
 
     @objc private func loginButtonTapped() {
